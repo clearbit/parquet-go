@@ -449,13 +449,3 @@ func i64Digits(number int64) int {
 	return count
 
 }
-
-func u64Digits(number uint64) int {
-	count := 0
-	for number != 0 {
-		number /= 10
-		count += 1
-	}
-	return count
-
-}
