@@ -312,7 +312,8 @@ func (m *reflectMarshaller) decodeValue(field interfaces.MarshalElement, value r
 }
 
 func (m *reflectMarshaller) decodeUnixTime(field interfaces.MarshalElement, i64 int64) error {
-	// best effort parse unix timestamps
+	// best effort parse unix timestamps.
+	// since 99% of the time these are timestamps and are <= now this is a fairly safe bet
 	digits := i64Digits(i64)
 	now := time.Now()
 
